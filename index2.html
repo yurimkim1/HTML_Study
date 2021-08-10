@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML comment-->
+    <script>
+
+        function todo(msg){
+            console.log('todo: message');
+            document.write('message', msg);
+            return 200;
+        }
+
+        // 함수를 전달, 반환할 수 있다.
+        // flow : 호출자(data), 피호출자(data)
+        // callback 함수 <-- API networking : waiting
+        // Rest API, AJAX
+        /* 네트워킹이 이루어지는 상황에서 자주 사용
+         네트워킹은 주고받는 각각의 단계에서 기다리는 시간이 있다
+         완료되었을 때 접근*/
+        function request( callback ){
+            console.log('send request info');
+            console.log('end');
+            let data = 100;
+            // 완료 후에 실행될 함수
+            return callback(data); // 함수(todo) 호출 결과 return 
+
+        }
+
+        // call todo
+        let rst = request( todo ); // 호출은 어느 위치에서든 해도 상관없다, 정의만 제대로 하면됨
+        console.log(rst);
+
+        function response(){
+            return todo;// 함수를 반환
+        }
+
+        response()('william');//<-- 함수가 함수를 리턴 후 호출 == todo() 똑같은거
+        var proc = response();
+        proc('mario');
+
+        // MVC
+
+    </script>
+</body>
+</html>

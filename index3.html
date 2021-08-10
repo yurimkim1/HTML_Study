@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML comment-->
+    <script>
+        // 1. 함수는 전달, 반환할 수 있다.
+        // 2. 함수는 객체다.. 사실 다 객체다...
+        // -    객체는 reference 변수로 다룬다.
+        // var obj = { // !!!!!!!!! 키워드1.일시적 객체 ( 한번쓰고 버림)
+        //     nick : 'mario',
+        //     phone : '1010-2020',
+        //     // scope function()
+        //     print : function(){ // obj 객체안에 함수 선언 변수를 가져다 쓸려면 this를 붙인다
+        //         console.log( this.nick, this.phone);
+        //     }
+        // };
+        // // 이름() <-- 함수 호출
+        // var obj2 = obj(); // reference copy 참조 복사
+        // obj2.nick = 'william';
+        // obj.print();
+
+
+        // console.log(obj);
+        // obj.print();
+        // // private
+        // obj.address = 'busan dong 19';
+        // console.log(obj);
+
+        // // Function use like class
+        // var Book = function(){ //익명함수 // !!!!!!!!!키워드2.함수 이용 클래스 생성자만든거처럼 생각하삼
+        //     console.log('Book');
+        //     this.title = 'javascript'
+        //     this.print = function(){
+        //         console.log(this.title);
+        //     }
+        //     //return title;
+        // }
+
+        // // prototype : 공통
+        // Book.prototype.print = function(){
+        //     console.log(this.title);
+        // }
+        // //var book1 = Book(); return -> Book 함수에서 받아오는 return 값을 book1에 대입
+        // var book1 = new Book(); // !!!!!!!!! 똑같은 클래스의 인스턴스 여러개 생성
+        // var book2 = new Book();// constuctor -> new 키워드로 객체생성
+        // console.log( book1 );
+        // console.log( book2 );
+        // book1.print();
+        // // setter
+        // book2.title = 'python'
+        // book1.print();
+        // book2.print();
+
+        // // ES6
+        // class Member{
+        //     constructor(){ // 생성자 -> 초기화
+        //         this.title = 'instance of Member';
+
+        //     }
+        // }
+        // var user = new Member();
+        // console.log( user );
+        // user.title = 'member in site'
+        // console.log( user );
+
+        // 3. access data value
+        var scores = [10,50,20,90];
+        for(let i=0; i<scores.length; i+=1){
+            console.log( scores[i] );
+        }
+        var student = { name:'mario', major:'mechanic'};
+        console.log( student.name , student.major);
+        // key-value
+        console.log( student['name'] , student['major']);
+        var tutor = [{name:'jang'},{name:'kims'},{name:'park'}]
+        console.log( tutor[0]['name'] );
+        console.log( tutor[0].name );
+
+        // 4. JSON (내장 객체)
+        const json = '{"result":true, "count":42 }';// string
+        //string to object
+        const jsonObj = JSON.parse(json);
+        console.log(json);
+        console.log(jsonObj);
+
+        // object to string
+        const pos = { x: 5, y: 12};
+        const jsonPos = JSON.stringify(pos);
+        console.log( jsonPos );
+    </script>
+</body>
+</html>

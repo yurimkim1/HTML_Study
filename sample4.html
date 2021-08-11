@@ -27,7 +27,35 @@
 
 
     <script>
-            // var img = document.querySelector('#showArea img');
+            var img = document.querySelector('#showArea img');
+            var current = 0;
+            var direction = 1; // or -1
+            var maxIndex = 51;
+            var minIndex = 1;
+            function changeImageSrc(){
+                current += direction;
+                if(current > maxIndex){
+                    current = minIndex;
+                }
+                if(current < minIndex){
+                    current = maxIndex;
+                }
+                img.src = 'images/'+current+'.png';
+            }
+            window.addEventListener('load', function(){
+                // 일정 시간마다 호출되는 함수 등록
+                timerId = setInterval(changeImageSrc, 1000);
+                var btn2 = document.querySelector('#btn2');
+                btn2.addEventListener('click', function(){
+                    direction = 1;
+                });
+                var btn3 = document.querySelector('#btn3');
+                btn3.addEventListener('click', function(){
+                    direction = -1;
+                });
+            });
+            // clearInterval(timerId);
+
             // var btn1 = document.querySelector('#btn1');
             // btn1.addEventListener('click', toggle);
             // var btn2 = document.querySelector('#btn2');
